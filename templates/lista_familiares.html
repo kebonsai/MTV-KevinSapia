@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Familiares</title>
+</head>
+<body>
+    <h1>Mi Familia</h1>
+    <ul>
+        
+        {% for pariente in lista_familiares %}
+
+            <li>Número: {{pariente.id}} - Nombre: {{pariente.nombre}} , su parentezco es {{pariente.parentezco}} , tiene {{pariente.edad}} años, nació en {{pariente.fechaDeNacimiento}}, es trabajador : {{pariente.trabajador}} </li>
+
+        {% endfor %}
+
+    </ul>
+    
+</body>
+</html>

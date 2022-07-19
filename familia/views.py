@@ -1,22 +1,29 @@
-from urllib import response
 from django.http import HttpResponse
 from django.shortcuts import render
-from datetime import date, datetime
 from django.template import loader
 from familia.models import Familiar
 # Create your views here.
 
 
-def agregarfamiliar(request, nombre, parentezco, edad, fechaDeNacimiento, trabajador):
-    pariente = Familiar(nombre = nombre, parentezco = parentezco, edad= edad, fechaDeNacimiento = fechaDeNacimiento, trabajador = trabajador)
+def agregarfamiliar(self, nom, parent, ed, fechaDeNac, trabaj):
+    pariente = Familiar(nombre = nom, parentezco = parent, edad= ed, fechaDeNacimiento = fechaDeNac, trabajador = trabaj)
     pariente.save()
+    lista = [nom,parent,ed,fechaDeNac,trabaj]
 
-    return HttpResponse(f"""
-    <p> nombre: {pariente.nombre} - parentezco: {pariente.parentezco} - edad: {pariente.edad} - fechaDeNacimiento: {pariente.fechaDeNacimiento} - trabaja: {pariente.trabajador} - AGREGADO </p>
-    """)
+    return render(self,"agregarfamiliar.html",{"nuevofamiliar": lista})
+
+    #return HttpResponse(f"""
+    #<h1>Agregando familiar: </h1>
+    #<p>Agregando a la base de datos nombre: {pariente.nombre} - parentezco: {pariente.parentezco} - edad: {pariente.edad} - fechaDeNacimiento: {pariente.fechaDeNacimiento} - trabaja: {pariente.trabajador} - AGREGADO </p>
+    #""")
+
+def listarfamiliares(self):
+    lista = Familiar.objects.all
+
+    return render(self,"lista_familiares.html",{"lista_familiares": lista})
 
 def inicio(request):
     return HttpResponse(f"""
-    <p>Esto es un precario inicio.</p>
+    <h1>Esto es un precario inicio.</h1>
     """)
 

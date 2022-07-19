@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from familia.views import agregarfamiliar, inicio
+from familia.views import agregarfamiliar, inicio, listarfamiliares
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("sumarfamiliar/<nombre>/<parentezco>/<edad>/<fechaDeNacimiento>/<trabajador>/",agregarfamiliar),
-    path("",inicio)
+    path("sumarfamiliar/<nom>/<parent>/<ed>/<fechaDeNac>/<trabaj>/",agregarfamiliar),
+    path("",inicio),
+    path("verfamiliares/", listarfamiliares),
     #path('', include("familia/")),
 ]
