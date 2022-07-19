@@ -6,17 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Familiares</title>
 </head>
-<body : style="background-color:rgb(48, 48, 48) ;">
-    <h1: style="color: rgb(249, 179, 191) ; font-size: larger;">Mi Familia</h1>
-    <ul : style="color:rgb(198, 159, 34) ;">
+<body  style="background-color:rgb(48, 48, 48) ;">
+    <h1 style="color: rgb(249, 179, 191) ;">Mi Familia</h1>
+    <ul style="color:rgb(198, 159, 34) ;">
         
+
         {% for pariente in lista_familiares %}
             
-            <li>Número: {{pariente.id}} - Nombre: {{pariente.nombre}} , su parentezco es {{pariente.parentezco}} , tiene {{pariente.edad}} años, nació en {{pariente.fechaDeNacimiento}}, es trabajador : {{pariente.trabajador}} </li>
+            <li>Número: {{pariente.id}} - Nombre: {{pariente.nombre}} , su parentezco es {{pariente.parentezco}} , tiene {{pariente.edad}} años, nació en {{pariente.fechaDeNacimiento}}, es trabajador : 
+                {% if pariente.trabajador  %}
+                si
+                {% else %}
+                no 
+                {% endif %}</li>
+            
 
         {% endfor %}
 
     </ul>
+    <nav>
+        <a style= "font-size:larger;" href="/"><b>Inicio</b></a> 
+    </nav>
     
 </body>
 </html>

@@ -8,9 +8,9 @@
 </head>
 <body style="background-color:rgb(48, 48, 48) ;">
     
-    <h1 style="color: rgb(249, 179, 191) ; font-size: larger;">Agregando a {{nuevofamiliar.nombre}}: </h1>
+    <h1 style="color: rgb(249, 179, 191) ;">El familiar {{nuevofamiliar.nombre}} Ya fue agregado anteriormente. </h1>
     
-    <p style="color:rgb(198, 159, 34);">Guardando en la base de datos.</p>
+    <p style="color:rgb(198, 159, 34);">Datos ya existentes:</p>
         
         <ul style="color:rgb(198, 159, 34);">
             <p><span style = " font-weight:bold;">Nombre:</span> {{nuevofamiliar.nombre}} ...</p>
@@ -19,11 +19,10 @@
             <p><span style = " font-weight:bold;">Fecha De Nacimiento:</span> {{nuevofamiliar.fechaDeNacimiento}} ...</p>
             <p><span style = " font-weight:bold;">Trabaja:</span> {{nuevofamiliar.trabajador}} ...</p>
         </ul>
+        <p style="color:rgb(232, 67, 2)">NO SE AGREGÓ INFORMACION A LA BASE DE DATOS.</p>
 
-    
         <br>
-        <p style="color:rgb(9, 140, 20);">{{nuevofamiliar.nombre}} AGREGADO CORRECTAMENTE</p>
-    
+
         <nav>
             <a style= "font-size:larger;" href="/"><b>Inicio</b></a> 
         </nav>
