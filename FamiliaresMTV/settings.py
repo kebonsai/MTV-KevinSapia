@@ -55,7 +55,7 @@ ROOT_URLCONF = 'FamiliaresMTV.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/MTV/FamiliaresMTV/templates"],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
